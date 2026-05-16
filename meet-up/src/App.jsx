@@ -1,8 +1,8 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar.jsx";
-import EventsPage from "./pages/EventsPage.jsx";
-import EventDetailPage from "./pages/EventDetailPage.jsx";
+import EventsPage from "./Pages/EventsPage.jsx";
+import EventDetailPage from "./Pages/EventDetailPage.jsx";
 
 function App() {
   return (
