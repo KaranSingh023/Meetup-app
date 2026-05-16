@@ -8,6 +8,15 @@ const app = express();
 app.use(cors({ origin: "*" }));
 app.use(express.json());
 
+
+const eventRoutes = require("./routes/events");
+app.use("/api/events", eventRoutes);
+
+app.get("/", (req, res) => {
+  res.send("Meetup App Backend is running!");
+});
+
+
 mongoose
   .connect(process.env.MONGODB)
   .then(() => {
@@ -17,14 +26,4 @@ mongoose
     console.log("mongodb connection error:", err);
   });
 
-const eventRoutes = require("./routes/events");
-app.use("/api/events", eventRoutes);
-
-app.get("/", (req, res) => {
-  res.send("Meetup App Backend is running!");
-});
-
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => {
-  console.log(`server is running on port ${PORT}`);
-});
+module.exports = app;
