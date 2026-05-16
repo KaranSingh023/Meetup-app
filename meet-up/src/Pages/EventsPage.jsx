@@ -25,7 +25,7 @@ function EventsPage() {
 
     try {
       // build the query string
-      let url = "/api/events?";
+      let url = "https://meetup-backend-blond.vercel.app/api/events?";
       if (typeFilter !== "Both") {
         url += `type=${typeFilter}&`;
       }
