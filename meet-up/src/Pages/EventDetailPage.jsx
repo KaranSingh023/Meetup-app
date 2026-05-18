@@ -18,7 +18,7 @@ function EventDetailPage() {
     setError("");
 
     try {
-      const response = await fetch(`/api/events/${id}`);
+      const response = await fetch(`https://meetup-backend-blond.vercel.app/api/events/${id}`);
       if (!response.ok) {
         setError("Event not found.");
         setLoading(false);
